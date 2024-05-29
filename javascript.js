@@ -7,11 +7,15 @@ const display = document.querySelector(".display")
 const equal = document.querySelector("#equal")
 const ad = document.querySelector("#add")
 const operators = document.querySelectorAll(".operators")
+const clear = document.querySelector("#clear")
+
+clear.addEventListener("click", ()=> clearText());
 
 function clearText(){
     display.style.fontSize = "75px"
     display.textContent = 0
-    currentValue = "";
+    currentValue = ""
+    previousValue = "";
 }
 
 function backSpace(){
@@ -64,11 +68,9 @@ function calculate(){
     }
     else if(operator==="+"){
         currentValue+=previousValue
-        currentValue = currentValue.toFixed(2)
     }
     else if(operator==="-"){
         currentValue= previousValue-currentValue
-        currentValue = currentValue.toFixed(2)
     }
     else if(operator==="/"){
         if(currentValue==0){
@@ -81,3 +83,4 @@ function calculate(){
     }
     console.log(currentValue)
 }
+
