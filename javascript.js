@@ -49,6 +49,7 @@ operators.forEach((op)=> op.addEventListener("click", function(e){
     }
     operator = e.target.textContent
     previousValue = currentValue;
+    console.log(previousValue)
     currentValue = ""
 }))
 
@@ -81,6 +82,5 @@ function calculate(){
         currentValue = currentValue.toFixed(2)
         }
     }
-    console.log(currentValue)
 }
 
